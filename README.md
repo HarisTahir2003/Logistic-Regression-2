@@ -6,8 +6,8 @@
 
 The repository contains the following files:
 
-* **LogisticRegression.ipynb** – contains code for training and evaluating the linear regression model
-* **LogisticRegression.py** – corresponding .py file for the Linear Regression Jupyter Notebook
+* **LogisticRegression.ipynb** – contains code for training and evaluating the logistic regression model
+* **LogisticRegression.py** – corresponding .py file for the Logistic Regression Jupyter Notebook
 * **human_zombie_dataset_v5.csv** – contains the dataset required for the model
 * **human_zombie_dataset_v5.xlsx** – corresponding Excel file for easier visualization <br>
 
@@ -22,11 +22,9 @@ The repository contains the following files:
    
 ## Introduction
 
-This assignment focuses on implementing and analyzing **Linear Regression**, one of the most fundamental algorithms in supervised machine learning. Linear Regression models the relationship between a dependent variable and one or more independent variables by fitting a straight line to observed data. Its primary goal is to predict a continuous output based on input features by minimizing the error between the predicted and actual values, typically using the **least squares method**.
+This assignment focuses on the implementation and evaluation of **Logistic Regression**, a fundamental algorithm used for **binary classification** tasks. Unlike linear regression, which predicts continuous outcomes, logistic regression estimates the **probability of a class label** using the sigmoid (logistic) function to map linear combinations of features to values between 0 and 1. This makes it ideal for problems where the output is categorical — typically **0 or 1**.
 
-In this assignment, a **custom dataset named `human_zombie_dataset_v5`** is used to explore how linear regression can model and predict trends within synthetic or scenario-driven data.  
-
-The `.csv` file contains the actual dataset used for model training and evaluation, while the `.xlsx` version provides a convenient format for manual inspection and visualization.
+In this project, we apply logistic regression to the **`human_zombie_dataset_v5`**, a synthetic dataset designed to model and classify regions or scenarios based on zombie-related features. 
 
 
 ## Installation Requirements
@@ -81,39 +79,27 @@ Also, you will need a GPU to run the notebooks. It is recommended to have a Goog
 
 ## Assignment Overview
 
-The `LinearRegression.ipynb` notebook is the core component of this assignment, where various forms of **linear regression** are implemented and evaluated on the `human_zombie_dataset_v5` dataset. The notebook is structured in a step-by-step manner, moving from foundational concepts to more advanced regularized models. Each section is designed to deepen understanding of regression techniques and their real-world applicability.
+The `LogisticRegression.ipynb` notebook provides a comprehensive exploration of **logistic regression** as a binary classification algorithm, using both manual implementation and scikit-learn's built-in tools.
 
-### 1. **Linear Regression from Scratch**
+### 1. **Logistic Regression from Scratch**
 
-The assignment begins by implementing linear regression **manually**, using only NumPy and basic Python functions. <br>
+The notebook begins with an implementation of logistic regression **from the ground up** using only `NumPy`.  <br>
+This part strengthens the mathematical intuition behind logistic regression and gives full control over the learning process.
 
-This section helps reinforce mathematical intuition and the inner workings of linear regression without relying on external libraries.
+### 2. **Logistic Regression using Scikit-learn**
 
-### 2. **Linear Regression using Scikit-learn**
+Next, the same classification task is approached using the `LogisticRegression` class from `scikit-learn`. This includes:
 
-Next, the same task is approached using `scikit-learn`'s `LinearRegression` class. This includes:
+This section helps contrast manual implementation with real-world libraries that are optimized for performance and ease of use.
 
-This section provides a fast and scalable way to train and test models, ideal for practical usage. It also allows us to compare the manual implementation results with state-of-the-art results.
+### 3. **Model Evaluation and Interpretation**
 
-### 3. **Ridge Regression**
-
-This part introduces **Ridge Regression**, a regularized variant of linear regression that adds an L2 penalty term to the cost function. It is useful in reducing overfitting by penalizing large weights. The notebook demonstrates Ridge Regression using `Ridge` from `scikit-learn`,
-
-### 4. **Lasso Regression**
-
-In this section, **Lasso Regression** is implemented using `scikit-learn`’s `Lasso` class. Unlike Ridge, Lasso applies **L1 regularization**, which can reduce some weights to zero, effectively performing **feature selection**. 
-
-### 5. **Elastic Net Regression**
-
-The final model is **Elastic Net**, which combines both L1 and L2 penalties. It is implemented using `ElasticNet` from `scikit-learn`, and is especially useful when there are multiple correlated features, and we want a balance between feature selection and generalization.
-
+The notebook concludes with visual and quantitative analysis.
 
 
 ## Data
 
-The dataset used in this assignment is titled human_zombie_dataset_v5.csv, a creatively themed, synthetic dataset designed to explore linear relationships between variables in a fictional scenario involving humans and zombies. While humorous in concept, the dataset serves as a meaningful resource for applying regression techniques and understanding the impact of regularization.
-
-This dataset simulates human and zombie characteristics based on various lifestyle and physical traits. The dataset contains 1,000 entries, each with features that correlate with a continuous "Human-Zombie Score" ranging from 0 (complete human) to 100 (complete zombie).
+The dataset used in this assignment is titled human_zombie_dataset_v5.csv, a creatively themed, synthetic dataset. This dataset simulates human and zombie characteristics based on various lifestyle and physical traits. The dataset contains 1,000 entries, each with features that correlate with a continuous "Human-Zombie Score" ranging from 0 (complete human) to 100 (complete zombie).
 
 **Features**
 
@@ -140,13 +126,6 @@ The entire training process alongside the relevant evaluations and visualization
 <h4> 1. This image shows how Ridge Regression shrinks the coefficients of all features as regularization strength increases. In Ridge regression, all coefficients shrink smoothly toward zero as log(Alpha) increases. Unlike Lasso, Ridge never eliminates features entirely — it reduces their influence proportionally.  </h4>
 <img src="pic1.png" width="1000px" height="500px"> <br> 
 
-
-<h4> 2. This image shows how Lasso Regression shrinks the coefficients of all features as regularization strength increases. Lasso regression causes some coefficients to drop sharply to zero as log(Alpha) increases. This behavior is due to the L1 penalty, which promotes **feature selection** by eliminating less important features. Only a few dominant features survive high regularization, making the model simpler and sparser. </h4>
-<img src="pic2.png" width="1000px" height="500px"> <br> 
-
-<h4> 3. This plot shows how Elastic Net shrinks the coefficients of all features as regularization strength increases. Some features (e.g., Physical Activity and Junk Food) reduce significantly but not as abruptly as in Lasso. Elastic Net combines L1 and L2 penalties, leading to both shrinkage and sparsity in a balanced manner. </h4>
-<img src="pic3.png" width="1000px" height="500px">
- <br> 
  
 ## License
 
