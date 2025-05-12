@@ -123,7 +123,7 @@ The entire training process alongside the relevant evaluations and visualization
 
 ## Screenshots
 
-<h4> 1. This image shows how Ridge Regression shrinks the coefficients of all features as regularization strength increases. In Ridge regression, all coefficients shrink smoothly toward zero as log(Alpha) increases. Unlike Lasso, Ridge never eliminates features entirely — it reduces their influence proportionally.  </h4>
+<h4> 1. This image shows the confusion matrix when the logistic regression classifier is evaluated on the test dataset.  </h4>
 <img src="pic1.png" width="1000px" height="500px"> <br> 
 
  
